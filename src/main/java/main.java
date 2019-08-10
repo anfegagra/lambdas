@@ -1,9 +1,3 @@
-/**
- * Copyright 2018, Banco Colpatria Multibanca Colpatria S.A. Digital Factory - Colpatria
- * http://www.colpatria.com
- *
- * All rights reserved Date: 8/08/2019
- */
 package main.java;
 
 public class main {
@@ -22,6 +16,24 @@ public class main {
 		Persona personaLambda = () -> "pipe lambda";
 
 		System.out.println(personaLambda.obtenerNombre());
+
+		Suma suma = new Suma() {
+			@Override
+			public int sumar(int a, int b) {
+				return a + b;
+			}
+		};
+
+		System.out.println(suma.sumar(2, 3));
+
+		Suma suma1 = (a, b) -> {
+			a = b * b;
+			a = a + b;
+			System.out.println("Imprimiendo dentro de la función lambda");
+			return a;
+		};
+
+		System.out.println(suma1.sumar(2, 3));
 	}
 
 }
