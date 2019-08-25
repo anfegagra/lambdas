@@ -1,6 +1,6 @@
 package main.java;
 
-public class main {
+public class main implements PorDefecto {
 
 	public static void main(String[] args) {
 
@@ -34,6 +34,14 @@ public class main {
 		};
 
 		System.out.println(suma1.sumar(2, 3));
+
+		main lambda = new main();
+		System.out.println(lambda.obtenerNombrePorDefecto("Pipe"));
+
 	}
 
+	@Override
+	public void mostrarNombre(String nombre) {
+
+	}
 }
